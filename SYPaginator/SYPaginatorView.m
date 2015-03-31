@@ -108,10 +108,10 @@
     
     [self _resetScrollViewContentSize];
     
-//    for (NSNumber *key in _pages) {
-//        UIView *view = [_pages objectForKey:key];
-//        view.frame = [self frameForPageAtIndex:key.integerValue];
-//    }
+    for (NSNumber *key in _pages) {
+        UIView *view = [_pages objectForKey:key];
+        view.frame = [self frameForPageAtIndex:key.integerValue];
+    }
 }
 
 
@@ -318,7 +318,7 @@
 - (CGFloat)_offsetForPage:(NSInteger)page {
     CGFloat pageDelta = 0.0f;
     if (_paginationDirection == SYPageViewPaginationDirectionHorizontal) {
-        pageDelta = _scrollView.bounds.size.width;
+        pageDelta = [[UIScreen mainScreen] bounds].size.width;
     } else {
         pageDelta = _scrollView.bounds.size.height;
     }
